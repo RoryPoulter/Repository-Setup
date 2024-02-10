@@ -17,7 +17,8 @@ Creates the following files and directories:
 ![example_repository](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/d2b8cc01-38f0-47c1-a9a3-56fe3f97449c)
 * Create a directory to store your local repository
 
-![example_inputs](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/6fdbe5d8-202f-49b0-8fc5-2fea9608cea0)
+![example_inputs](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/5f5f412d-5a31-4da7-966f-566bb59ae148)
+
 * Enter the path to the directory and the https URL into the entry boxes
 * Press 'Setup'
 
