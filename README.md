@@ -23,3 +23,6 @@ Creates the following files and directories:
 
 ![example_result](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/6d4282f3-8d61-4feb-a05d-35c99afc6429)
 * The directory will now look like this
+
+![example_main_py](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/933763be-77cf-4d7f-8105-f1f305a8eea0)
+* If the option 'Create main.py' is selected, the following code will be in the directory `src`
