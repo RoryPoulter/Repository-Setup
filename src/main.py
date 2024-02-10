@@ -1,5 +1,29 @@
 import os
 from tkinter import *
+from tkinter import messagebox
+
+
+def verifyInputs(local_path, remote_repo):
+    if "" in (local_path, remote_repo):
+        messagebox.showerror("Error", "Empty fields")
+        return False
+    dir_exists = os.path.exists(local_path)
+    if not dir_exists:
+        messagebox.showerror("Error", f"Directory {local_path} does not exist")
+        return False
+    link = remote_repo.split("/")
+    if link[0] != "https:":
+        messagebox.showerror("Error", "Invalid remote repository")
+        return False
+    if link[1] != "":
+        messagebox.showerror("Error", "Invalid remote repository")
+        return False
+    if link[2] != "github.com":
+        messagebox.showerror("Error", "Invalid remote repository")
+        return False
+    if link[4][-4:] != ".git":
+        messagebox.showerror("Error", "Invalid remote repository")
+        return False
 
 
 def createReadme(local_path, remote_repo):
@@ -45,6 +69,9 @@ def createDirectories(local_path):
 def setupRepository():
     local_path = path.get().strip('"')
     remote_repo = repo.get()
+    valid = verifyInputs(local_path, remote_repo)
+    if not valid:
+        return
     createDirectories(local_path)
     print("------------------\nCreating files")
     createReadme(local_path, remote_repo)
@@ -60,6 +87,7 @@ def setupWindow(window, path, repo, create_main):
     window.title("GitHub Repository Initializer")
     window.geometry("600x400")
     window.config(bg="#24292e")
+    window.resizable(False, False)
 
     Label(window, text="GitHub Repository Initializer", font=(font, 20), bg="#24292e", fg="#ffffff").pack(pady=5)
 
