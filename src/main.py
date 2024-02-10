@@ -2,6 +2,13 @@ import os
 from tkinter import *
 
 
+def createReadme(local_path, remote_repo):
+    repo_name = remote_repo.split("/")[4][:-4]
+    with open(local_path+r"/README.md", "w") as readme:
+        readme.write(f"# {repo_name}")
+    print("Created file README.md")
+
+
 def createMainPy(local_path):
     base_code = """# The main body of the code
 
@@ -16,9 +23,6 @@ if __name__ == "__main__":
 
 
 def gitInit(local_path, remote_repo):
-    repo_name = remote_repo.split("/")[4][:-4]
-    print(local_path)
-    os.system(rf'''echo "# {repo_name}" >> {local_path}\README.md''')
     os.system(rf'git init {local_path}')
     os.system(rf'git -C {local_path} add README.md')
     os.system(rf'git -C {local_path} commit -m "first commit"')
@@ -43,6 +47,7 @@ def setupRepository():
     remote_repo = repo.get()
     createDirectories(local_path)
     print("------------------\nCreating files")
+    createReadme(local_path, remote_repo)
     open(local_path+r"/.gitignore", "a")
     print("Created file .gitignore")
     if create_main.get():
