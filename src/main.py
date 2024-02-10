@@ -2,6 +2,19 @@ import os
 from tkinter import *
 
 
+def createMainPy(local_path):
+    base_code = """# The main body of the code
+
+
+if __name__ == "__main__":
+    print("Hello world")
+"""
+
+    with open(local_path+r"/src/main.py", "w") as main_py:
+        main_py.write(base_code)
+    print("Created main.py")
+
+
 def gitInit(local_path, remote_repo):
     repo_name = remote_repo.split("/")[4][:-4]
     print(local_path)
@@ -33,8 +46,7 @@ def setupRepository():
     open(local_path+r"/.gitignore", "a")
     print("Created file .gitignore")
     if create_main.get():
-        open(local_path+r"/src/main.py", "a")
-        print("Created main.py")
+        createMainPy(local_path)
     gitInit(local_path, remote_repo)
 
 
