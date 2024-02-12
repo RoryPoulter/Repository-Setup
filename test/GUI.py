@@ -8,7 +8,9 @@ def success():
 
 def setupWindow(window, path, repo, create_main):
     font = "SFMono"
+    icon = PhotoImage(file="../res/icon.png")
     window.title("GitHub Repository Initializer")
+    window.iconphoto(False, icon)
     window.geometry("600x400")
     window.config(bg="#24292e")
     window.resizable(False, False)
