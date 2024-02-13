@@ -12,10 +12,10 @@ Creates the following files and directories:
 
 ## Usage
 ![example_directory](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/10cc7f07-ee84-473b-9135-efe1dd7cafa4)
-* Create an empty remote repository on GitHub
+* Create a directory to store your local repository
 
 ![example_repository](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/d2b8cc01-38f0-47c1-a9a3-56fe3f97449c)
-* Create a directory to store your local repository
+* Create an empty remote repository on GitHub
 
 ![example_inputs](https://github.com/RoryPoulter/Repository-Setup/assets/118304377/5f5f412d-5a31-4da7-966f-566bb59ae148)
 
