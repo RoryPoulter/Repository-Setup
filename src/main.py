@@ -1,6 +1,12 @@
 import os
 from tkinter import *
 from tkinter import messagebox
+from tkinter import filedialog
+
+
+def browseDirectories():
+    directory = '"' + filedialog.askdirectory() + '"'
+    path.set(directory)
 
 
 def verifyInputs(local_path, remote_repo):
@@ -96,6 +102,8 @@ def setupWindow(window, path, repo, create_main):
     Label(window, text="Directory Path:", bg="#24292e", fg="#ffffff", font=font).pack(pady=10)
     Entry(window, textvariable=path, width=75, bg="#24292e", fg="#ffffff", highlightthickness=1,
           highlightbackground="#2b3137").pack()
+    Button(window, text="Browse", bg="#2b3137", fg="#ffffff", borderwidth=0, font=font, width=10,
+           activebackground="#2b3137", activeforeground="#ffffff", command=browseDirectories).pack(pady=3)
     Label(window, text="Remote Repository (https):", bg="#24292e", fg="#ffffff", font=font).pack(pady=10)
     Entry(window, textvariable=repo, width=75, bg="#24292e", fg="#ffffff", highlightthickness=1,
           highlightbackground="#2b3137").pack()
