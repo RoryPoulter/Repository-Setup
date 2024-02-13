@@ -6,6 +6,7 @@ from tkinter import filedialog
 
 def browseDirectories():
     directory = '"' + filedialog.askdirectory() + '"'
+    directory = directory.replace("/", "\\")
     path.set(directory)
 
 
